@@ -1,4 +1,4 @@
-package com.jeognykun.triple.mileage.mileageservice.controller.review.dto;
+package com.jeognykun.triple.mileage.mileageservice.dto.review;
 
 import com.jeognykun.triple.mileage.mileageservice.type.ActionType;
 import com.jeognykun.triple.mileage.mileageservice.type.EventType;
