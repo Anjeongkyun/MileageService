@@ -1,4 +1,4 @@
-package com.jeognykun.triple.mileage.mileageservice.controller;
+package com.jeognykun.triple.mileage.mileageservice.controller.review;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
