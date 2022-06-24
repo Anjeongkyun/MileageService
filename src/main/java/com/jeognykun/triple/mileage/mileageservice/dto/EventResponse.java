@@ -1,4 +1,4 @@
-package com.jeognykun.triple.mileage.mileageservice.dto.review;
+package com.jeognykun.triple.mileage.mileageservice.dto;
 
 import com.jeognykun.triple.mileage.mileageservice.type.ActionType;
 import com.jeognykun.triple.mileage.mileageservice.type.EventType;
@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Getter
-public class ReviewEventResponse {
+public class EventResponse {
 
     @NotBlank
     private Long id;

@@ -1,4 +1,4 @@
-package com.jeognykun.triple.mileage.mileageservice.dto.review;
+package com.jeognykun.triple.mileage.mileageservice.dto;
 
 import com.jeognykun.triple.mileage.mileageservice.type.ActionType;
 import com.jeognykun.triple.mileage.mileageservice.type.EventType;
@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class ReviewEventRequest {
+public class EventRequest {
 
     @NotNull
     private EventType type;
