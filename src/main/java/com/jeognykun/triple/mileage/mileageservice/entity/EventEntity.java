@@ -1,9 +1,11 @@
 package com.jeognykun.triple.mileage.mileageservice.entity;
 
-import com.jeognykun.triple.mileage.mileageservice.history.PointHistory;
 import com.jeognykun.triple.mileage.mileageservice.type.ActionType;
 import com.jeognykun.triple.mileage.mileageservice.type.EventType;
+import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,11 +14,16 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name ="event")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
 public class EventEntity {
 
     @Id
+    @Column(name = "event_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long event_id;
+    private Long eventId;
 
     @Column(name = "type", nullable = false)
     @Enumerated(value = EnumType.STRING)
@@ -36,7 +43,7 @@ public class EventEntity {
     private long point;
 
     @Column(name = "photo", nullable = false)
-    private String photos;
+    private String photo;
 
     @Column(name = "user_id")
     private String userId;
@@ -53,7 +60,7 @@ public class EventEntity {
     private LocalDateTime updateAt;
 
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
-    private List<PointHistory> histories = new ArrayList<>();
+    private List<PointHistoryEntity> histories = new ArrayList<>();
 
     @Builder
     public EventEntity(String userId, String reviewId, String content, ActionType action, EventType type, long point, String photos, String placeId) {
@@ -63,7 +70,7 @@ public class EventEntity {
         this.action = action;
         this.type = type;
         this.point = point;
-        this.photos = photos;
+        this.photo = photos;
         this.placeId = placeId;
     }
 }
