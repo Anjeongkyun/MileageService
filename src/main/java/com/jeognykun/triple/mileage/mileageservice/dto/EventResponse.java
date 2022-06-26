@@ -1,5 +1,6 @@
 package com.jeognykun.triple.mileage.mileageservice.dto;
 
+import com.jeognykun.triple.mileage.mileageservice.domain.Event;
 import com.jeognykun.triple.mileage.mileageservice.type.ActionType;
 import com.jeognykun.triple.mileage.mileageservice.type.EventType;
 import lombok.Getter;
@@ -33,4 +34,15 @@ public class EventResponse {
 
     @NotBlank
     private long point;
+
+    public EventResponse(Event event) {
+        this.id = event.getEventId();
+        this.reviewId = event.getReviewId();
+        this.type = event.getType();
+        this.point = event.getPoint();
+        this.action = event.getAction();
+        this.content = event.getContent();
+        this.attachedPhotos = event.getPhoto();
+        this.placeId = event.getPlaceId();
+    }
 }

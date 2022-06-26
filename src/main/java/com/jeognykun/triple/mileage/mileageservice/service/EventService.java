@@ -1,17 +1,20 @@
 package com.jeognykun.triple.mileage.mileageservice.service;
 
-import com.jeognykun.triple.mileage.mileageservice.dto.EventRequest;
-import com.jeognykun.triple.mileage.mileageservice.entity.EventEntity;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
+import com.jeognykun.triple.mileage.mileageservice.dto.EventRequest;
+import com.jeognykun.triple.mileage.mileageservice.exception.ContentAndPhotoIdNotFoundException;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional
 @RequiredArgsConstructor
 public class EventService {
-    private final IEventService iEventService;
 
-    public EventEntity eventAction(EventRequest req){
 
-        return this.iEventService.eventAction(req);
+    public void checkContentAndPhotoId(EventRequest req) {
+        if(req.getAttachedPhotoIds().size() == 0 && req.getContent().length() == 0)
+            throw new ContentAndPhotoIdNotFoundException(req.getReviewId());
     }
 }

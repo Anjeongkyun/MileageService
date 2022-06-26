@@ -1,4 +1,4 @@
-package com.jeognykun.triple.mileage.mileageservice.entity;
+package com.jeognykun.triple.mileage.mileageservice.domain;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -9,17 +9,21 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "point_history")
+@Table(name = "point")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class PointHistoryEntity {
+public class Point {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "history_id")
-    private Long historyId;
+    @Column(name = "id")
+    private String id;
+
+    @Column(name = "point")
+    private long point;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
@@ -29,17 +33,16 @@ public class PointHistoryEntity {
     @Column(name = "updated_at")
     private LocalDateTime updateAt;
 
-    @ManyToOne
-    @JoinColumn(name = "event_id", nullable = false, updatable = false)
-    private EventEntity event;
-
-    @ManyToOne
-    @JoinColumn(name = "point_id", nullable = false, updatable = false)
-    private PointEntity point;
+    @OneToMany(mappedBy = "point")
+    private List<PointHistory> histories = new ArrayList<>();
 
     @Builder
-    public PointHistoryEntity(EventEntity event, PointEntity point) {
-        this.event = event;
+    public Point(String id, long point) {
+        this.id = id;
         this.point = point;
+    }
+
+    public void addHistory(PointHistory pointHistory) {
+        getHistories().add(pointHistory);
     }
 }
