@@ -26,6 +26,9 @@ public class Place {
     @Column(name = "type")
     private String type;
 
+    @Column(name = "value")
+    private String value;
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
@@ -34,9 +37,9 @@ public class Place {
     @Column(name = "updated_at")
     private LocalDateTime updateAt;
 
-//    @Builder
-//    public Place(String placeId, String type) {
-//        this.placeId = placeId;
-//        this.type = type;
-//    }
+    @Builder
+    public Place(String placeId, String value) {
+        this.placeId = placeId;
+        this.value = value;
+    }
 }

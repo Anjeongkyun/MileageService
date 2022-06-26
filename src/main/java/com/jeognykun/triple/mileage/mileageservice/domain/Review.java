@@ -6,23 +6,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Table(name = "place_history")
+@Table(name = "review")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class PlaceHistory {
+@Getter
+public class Review {
 
-    @EmbeddedId
-    @Column(name = "place_id")
-    private String placeId;
-
+    @Id
     @Column(name = "review_id")
     private String reviewId;
 
+    @Column(name = "content")
+    private int content;
+
+    @Column(name = "photo")
+    private int photo;
+
+    @CreatedDate
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
@@ -31,9 +39,10 @@ public class PlaceHistory {
     @Column(name = "updated_at")
     private LocalDateTime updateAt;
 
-//    @Builder
-//    public PlaceHistory(PlaceId id, String value) {
-//        this.id = id;
-//        this.value = value;
-//    }
+    @Builder
+    public Review(String reviewId, int content, int photo) {
+        this.reviewId = reviewId;
+        this.content = content;
+        this.photo = photo;
+    }
 }
