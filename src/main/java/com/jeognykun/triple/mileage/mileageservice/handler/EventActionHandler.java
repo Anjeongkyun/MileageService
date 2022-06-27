@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class EventActionHandler {
-
     private final EventAddService eventAddService;
 
     public EventActionService actionTypeHandler(EventRequest req){
