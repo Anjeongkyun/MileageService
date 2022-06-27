@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name = "point")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class Point {
+public class Point extends BaseTime{
 
     @Id
     @Column(name = "id")
@@ -25,13 +25,13 @@ public class Point {
     @Column(name = "point")
     private long point;
 
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updateAt;
+//    @CreationTimestamp
+//    @Column(name = "created_at", updatable = false)
+//    private LocalDateTime createdAt;
+//
+//    @UpdateTimestamp
+//    @Column(name = "updated_at")
+//    private LocalDateTime updateAt;
 
     @OneToMany(mappedBy = "point")
     private List<PointHistory> histories = new ArrayList<>();

@@ -18,7 +18,7 @@ import java.util.List;
 @Table(name ="event")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class Event {
+public class Event extends BaseTime{
 
     @Id
     @Column(name = "event_id")
@@ -51,13 +51,13 @@ public class Event {
     @Column(name = "place_id", nullable = false)
     private String placeId;
 
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updateAt;
+//    @CreationTimestamp
+//    @Column(name = "created_at", updatable = false)
+//    private LocalDateTime createdAt;
+//
+//    @UpdateTimestamp
+//    @Column(name = "updated_at")
+//    private LocalDateTime updateAt;
 
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
     private List<PointHistory> histories = new ArrayList<>();

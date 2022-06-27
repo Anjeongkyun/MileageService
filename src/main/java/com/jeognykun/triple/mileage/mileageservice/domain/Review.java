@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Table(name = "review")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class Review {
+public class Review extends BaseTime{
 
     @Id
     @Column(name = "review_id")
@@ -30,14 +30,14 @@ public class Review {
     @Column(name = "photo")
     private int photo;
 
-    @CreatedDate
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updateAt;
+//    @CreatedDate
+//    @CreationTimestamp
+//    @Column(name = "created_at", updatable = false)
+//    private LocalDateTime createdAt;
+//
+//    @UpdateTimestamp
+//    @Column(name = "updated_at")
+//    private LocalDateTime updateAt;
 
     @Builder
     public Review(String reviewId, int content, int photo) {

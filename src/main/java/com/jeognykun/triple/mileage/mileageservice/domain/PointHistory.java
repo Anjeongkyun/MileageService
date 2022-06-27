@@ -14,20 +14,20 @@ import java.time.LocalDateTime;
 @Table(name = "point_history")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class PointHistory {
+public class PointHistory extends BaseTime{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "history_id")
     private Long historyId;
 
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updateAt;
+//    @CreationTimestamp
+//    @Column(name = "created_at", updatable = false)
+//    private LocalDateTime createdAt;
+//
+//    @UpdateTimestamp
+//    @Column(name = "updated_at")
+//    private LocalDateTime updateAt;
 
     @ManyToOne
     @JoinColumn(name = "event_id", nullable = false, updatable = false)
