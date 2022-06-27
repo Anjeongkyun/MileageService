@@ -18,7 +18,7 @@ public class PlaceHistory extends BaseTime{
 
     @EmbeddedId
     @Column(name = "place_id")
-    private String placeId;
+    private PlaceId placeId;
 
     @Column(name = "review_id")
     private String reviewId;
@@ -31,9 +31,9 @@ public class PlaceHistory extends BaseTime{
 //    @Column(name = "updated_at")
 //    private LocalDateTime updateAt;
 
-//    @Builder
-//    public PlaceHistory(PlaceId id, String value) {
-//        this.id = id;
-//        this.value = value;
-//    }
+    @Builder
+    public PlaceHistory(PlaceId placeId, String reviewId) {
+        this.placeId = placeId;
+        this.reviewId = reviewId;
+    }
 }
