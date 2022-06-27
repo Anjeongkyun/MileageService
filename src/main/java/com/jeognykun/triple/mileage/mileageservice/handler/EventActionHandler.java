@@ -12,7 +12,7 @@ public class EventActionHandler {
 
     private final EventAddService eventAddService;
 
-    public EventActionService eventHandlers(EventRequest req){
+    public EventActionService actionTypeHandler(EventRequest req){
 
         EventActionService eventService = null;
 
@@ -20,6 +20,17 @@ public class EventActionHandler {
             case ADD:
                 eventService = new EventActionService(eventAddService);
                 break;
+            case MOD:
+//                eventService = new EventActionService(eventAddService);
+                break;
+            case DELETE:
+//                eventService = new EventActionService(eventAddService);
+                break;
+
+            default:
+                throw new IllegalArgumentException(
+                        String.format("Unknown action type : %s", req.getAction())
+                );
         }
 
         return eventService;
