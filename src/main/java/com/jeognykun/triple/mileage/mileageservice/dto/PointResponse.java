@@ -10,12 +10,12 @@ import java.util.List;
 @Getter
 public class PointResponse {
 
-    private String userId;
+    private String pointId;
     private long point;
     private List<EventResponse> histories;
 
     public PointResponse(Point point) {
-        this.userId = point.getId();
+        this.pointId = point.getPointId();
         this.point = point.getPoint();
         this.histories = buildHistory(point.getHistories());
     }

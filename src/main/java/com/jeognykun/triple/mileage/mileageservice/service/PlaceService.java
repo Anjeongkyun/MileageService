@@ -29,10 +29,6 @@ public class PlaceService {
         return placeRepository.findById(placeId).orElse(null);
     }
 
-//    public Place isSpecial(String placeId) {
-//        return placeRepository.findById(placeId).orElse(null);
-//    }
-
     public long getPlaceMileage(EventRequest dto, Place place) {
         if(isAvailableFirst(dto, place)) {
             setSpecialValue(dto.getPlaceId(), dto.getReviewId());

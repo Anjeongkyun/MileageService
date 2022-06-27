@@ -16,7 +16,6 @@ import java.util.List;
 public class CalculatePointService {
 
     private final ReviewRepository reviewRepository;
-    private final Review review;
 
     public long contentAndPhotoPointCalculate(EventRequest req) {
         long mileage;

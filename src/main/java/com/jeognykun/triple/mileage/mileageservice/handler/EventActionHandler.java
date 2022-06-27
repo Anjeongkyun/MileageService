@@ -19,12 +19,6 @@ public class EventActionHandler {
             case ADD:
                 eventService = new EventActionService(eventAddService);
                 break;
-            case MOD:
-//                eventService = new EventActionService(eventAddService);
-                break;
-            case DELETE:
-//                eventService = new EventActionService(eventAddService);
-                break;
 
             default:
                 throw new IllegalArgumentException(

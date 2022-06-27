@@ -21,14 +21,6 @@ public class PointHistory extends BaseTime{
     @Column(name = "history_id")
     private Long historyId;
 
-//    @CreationTimestamp
-//    @Column(name = "created_at", updatable = false)
-//    private LocalDateTime createdAt;
-//
-//    @UpdateTimestamp
-//    @Column(name = "updated_at")
-//    private LocalDateTime updateAt;
-
     @ManyToOne
     @JoinColumn(name = "event_id", nullable = false, updatable = false)
     private Event event;

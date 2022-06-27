@@ -17,12 +17,12 @@ public class EventAddService implements IEventActionService {
     private final EventService eventService;
     private final PlaceService placeService;
     private final CalculatePointService calculatePointService;
-//    private final ReviewSaveService reviewSaveService;
+    private final ReviewSaveService reviewSaveService;
 
     @Override
     public Event eventAction(EventRequest req) {
 
-        //event content & photoId value exist check
+        //event content & photoId exist check
         eventService.checkContentAndPhotoId(req);
 
         Place place = placeService.getPlace(req.getPlaceId());
@@ -32,6 +32,12 @@ public class EventAddService implements IEventActionService {
 
         long mileage = contentAndPhotoPoint + placePoint;
 
-        return null;
+        PlaceHistory placeHistory = placeService.isPlace(req.getPlaceId(), req.getReviewId(), req.getUserId());
+
+        Event event = eventService.writeEvent(req, mileage);
+        reviewSaveService.save(req);
+        placeService.savePlaceHistory(placeHistory);
+
+        return event;
     }
 }

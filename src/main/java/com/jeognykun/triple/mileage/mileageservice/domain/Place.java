@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Table(name = "special_place")
+@Table(name = "place")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Place extends BaseTime{
 
@@ -28,14 +28,6 @@ public class Place extends BaseTime{
 
     @Column(name = "value")
     private String value;
-
-//    @CreationTimestamp
-//    @Column(name = "created_at", updatable = false)
-//    private LocalDateTime createdAt;
-//
-//    @UpdateTimestamp
-//    @Column(name = "updated_at")
-//    private LocalDateTime updateAt;
 
     @Builder
     public Place(String placeId, String value) {

@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 public class EventResponse {
 
     @NotBlank
-    private Long id;
+    private Long eventId;
 
     @NotBlank
     private String reviewId;
@@ -36,7 +36,7 @@ public class EventResponse {
     private long point;
 
     public EventResponse(Event event) {
-        this.id = event.getEventId();
+        this.eventId = event.getEventId();
         this.reviewId = event.getReviewId();
         this.type = event.getType();
         this.point = event.getPoint();

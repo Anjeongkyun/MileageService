@@ -19,26 +19,18 @@ import java.util.List;
 public class Point extends BaseTime{
 
     @Id
-    @Column(name = "id")
-    private String id;
+    @Column(name = "point_id")
+    private String pointId;
 
     @Column(name = "point")
     private long point;
-
-//    @CreationTimestamp
-//    @Column(name = "created_at", updatable = false)
-//    private LocalDateTime createdAt;
-//
-//    @UpdateTimestamp
-//    @Column(name = "updated_at")
-//    private LocalDateTime updateAt;
 
     @OneToMany(mappedBy = "point")
     private List<PointHistory> histories = new ArrayList<>();
 
     @Builder
-    public Point(String id, long point) {
-        this.id = id;
+    public Point(String pointId, long point) {
+        this.pointId = pointId;
         this.point = point;
     }
 

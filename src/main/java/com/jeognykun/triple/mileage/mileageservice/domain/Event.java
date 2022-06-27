@@ -33,7 +33,7 @@ public class Event extends BaseTime{
     @Enumerated(value = EnumType.STRING)
     private ActionType action;
 
-    @Column(name = "review_id")
+    @Column(name = "review_id", nullable = false)
     private String reviewId;
 
     @Column(name = "content", nullable = false)
@@ -45,19 +45,11 @@ public class Event extends BaseTime{
     @Column(name = "photo", nullable = false)
     private String photo;
 
-    @Column(name = "user_id")
+    @Column(name = "user_id", nullable = false)
     private String userId;
 
     @Column(name = "place_id", nullable = false)
     private String placeId;
-
-//    @CreationTimestamp
-//    @Column(name = "created_at", updatable = false)
-//    private LocalDateTime createdAt;
-//
-//    @UpdateTimestamp
-//    @Column(name = "updated_at")
-//    private LocalDateTime updateAt;
 
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
     private List<PointHistory> histories = new ArrayList<>();
@@ -72,5 +64,9 @@ public class Event extends BaseTime{
         this.point = point;
         this.photo = photos;
         this.placeId = placeId;
+    }
+
+    public void addHistory(PointHistory pointHistory) {
+        getHistories().add(pointHistory);
     }
 }
