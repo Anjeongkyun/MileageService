@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class EventService {
 
-
     public void checkContentAndPhotoId(EventRequest req) {
         if(req.getAttachedPhotoIds().size() == 0 && req.getContent().length() == 0)
             throw new ContentAndPhotoIdNotFoundException(req.getReviewId());

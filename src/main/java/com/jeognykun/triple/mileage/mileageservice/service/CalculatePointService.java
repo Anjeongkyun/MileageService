@@ -16,8 +16,9 @@ import java.util.List;
 public class CalculatePointService {
 
     private final ReviewRepository reviewRepository;
+    private final Review review;
 
-    public long contentCalculate(EventRequest req) {
+    public long contentAndPhotoPointCalculate(EventRequest req) {
         long mileage;
 
         Review review = reviewRepository.findById(
@@ -40,6 +41,7 @@ public class CalculatePointService {
 
         return mileage;
     }
+
 
     private long getMileage(EventRequest dto, Review review) {
 

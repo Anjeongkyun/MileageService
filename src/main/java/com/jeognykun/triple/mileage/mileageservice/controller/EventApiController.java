@@ -17,8 +17,7 @@ public class EventApiController {
 
     @PostMapping
     public EventResponse event(@RequestBody EventRequest req){
-        EventActionService eventActionService = eventActionHandler.eventHandlers(req);
-
+        EventActionService eventActionService = eventActionHandler.actionTypeHandler(req);
         Event event = eventActionService.eventAction(req);
 
         return new EventResponse(event);

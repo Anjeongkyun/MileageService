@@ -21,13 +21,15 @@ public class EventAddService implements IEventActionService {
     @Override
     public Event eventAction(EventRequest req) {
 
+        //event content & photoId value exist check
         eventService.checkContentAndPhotoId(req);
 
-        Place place = placeService.isSpecial(req.getPlaceId());
+        Place place = placeService.getPlace(req.getPlaceId());
 
-        long mileage = calculatePointService.contentCalculate(req)
-                + placeService.getPlaceMileage(req,place);
+        long contentAndPhotoPoint = calculatePointService.contentAndPhotoPointCalculate(req);
+        long placePoint = placeService.getPlaceMileage(req,place);
 
+        long mileage = contentAndPhotoPoint + placePoint;
 
         return null;
     }
