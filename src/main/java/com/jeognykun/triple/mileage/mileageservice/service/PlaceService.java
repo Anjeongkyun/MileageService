@@ -81,7 +81,7 @@ public class PlaceService {
         }
 
         return PlaceHistory.builder()
-                .id(placeIds)
+                .placeId(placeIds)
                 .reviewId(reviewId)
                 .build();
     }
