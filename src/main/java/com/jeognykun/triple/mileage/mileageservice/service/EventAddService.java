@@ -29,11 +29,9 @@ public class EventAddService implements IEventActionService {
 
         long contentAndPhotoPoint = calculatePointService.contentAndPhotoPointCalculate(req);
         long placePoint = placeService.getPlaceMileage(req,place);
-
         long mileage = contentAndPhotoPoint + placePoint;
 
         PlaceHistory placeHistory = placeService.isPlace(req.getPlaceId(), req.getReviewId(), req.getUserId());
-
         Event event = eventService.writeEvent(req, mileage);
         reviewSaveService.save(req);
         placeService.savePlaceHistory(placeHistory);

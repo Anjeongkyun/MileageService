@@ -66,7 +66,7 @@ public class PlaceService {
 
         Optional<PlaceHistory> place = placeHistoryRepository.findById(placeIds);
 
-        if(place.isPresent()) {
+        if(!place.isPresent()) {
             throw new PlaceWriteFailException(placeId,placeUser);
         }
 

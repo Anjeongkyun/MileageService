@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 public class Place extends BaseTime{
 
     @Id
-    @Column(name = "place_id")
+    @Column(name = "id")
     private String placeId;
 
     @Column(name = "type")
