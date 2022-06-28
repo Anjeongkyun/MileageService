@@ -39,6 +39,16 @@ public class PlaceService {
         return dto.getAction().equals(ActionType.DELETE) ? -1 : 1;
     }
 
+    public void setSpecialPlace(Place place, String reviewId) {
+        if(reviewId.equals(place.getValue())) {
+            placeRepository.save(Place.builder()
+                    .placeId(place.getPlaceId())
+                    .type("special")
+                    .value(null)
+                    .build());
+        }
+    }
+
     public boolean isAvailableFirst(EventRequest dto, Place place) {
         if(place != null) {
             if(dto.getAction().equals(ActionType.DELETE)) {
@@ -74,5 +84,14 @@ public class PlaceService {
                 .placeId(placeIds)
                 .reviewId(reviewId)
                 .build();
+    }
+
+    public void deletePlaceHistory(String placeId, String userId) {
+        PlaceId placeIds = PlaceId.builder()
+                .placeId(placeId)
+                .placeUser(userId)
+                .build();
+
+        placeHistoryRepository.deleteById(placeIds);
     }
 }

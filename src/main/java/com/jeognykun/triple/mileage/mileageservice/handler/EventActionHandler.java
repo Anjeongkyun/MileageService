@@ -4,6 +4,7 @@ import com.jeognykun.triple.mileage.mileageservice.dto.EventRequest;
 import com.jeognykun.triple.mileage.mileageservice.service.EventActionService;
 import com.jeognykun.triple.mileage.mileageservice.service.EventAddService;
 import com.jeognykun.triple.mileage.mileageservice.service.EventDeleteService;
+import com.jeognykun.triple.mileage.mileageservice.service.EventModifyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -16,9 +17,8 @@ import javax.transaction.Transactional;
 public class EventActionHandler {
 
     private final EventAddService eventAddService;
-//    private final EventModService eventModService;
+    private final EventModifyService eventModService;
     private final EventDeleteService eventDeleteService;
-
 
     public EventActionService actionTypeHandler(EventRequest req){
 
@@ -27,6 +27,9 @@ public class EventActionHandler {
         switch (req.getAction()){
             case ADD:
                 eventService = new EventActionService(eventAddService);
+                break;
+            case MOD:
+                eventService = new EventActionService(eventModService);
                 break;
             case DELETE:
                 eventService = new EventActionService(eventDeleteService);
