@@ -30,8 +30,9 @@ public class Place extends BaseTime{
     private String value;
 
     @Builder
-    public Place(String placeId, String value) {
+    public Place(String placeId, String type, String value) {
         this.placeId = placeId;
+        this.type = type;
         this.value = value;
     }
 }
