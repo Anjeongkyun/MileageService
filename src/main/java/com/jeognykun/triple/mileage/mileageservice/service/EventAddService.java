@@ -5,6 +5,7 @@ import com.jeognykun.triple.mileage.mileageservice.domain.Place;
 import com.jeognykun.triple.mileage.mileageservice.domain.PlaceHistory;
 import com.jeognykun.triple.mileage.mileageservice.dto.EventRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -12,6 +13,7 @@ import javax.transaction.Transactional;
 @Transactional
 @RequiredArgsConstructor
 @Service
+@Primary
 public class EventAddService implements IEventActionService {
 
     private final EventService eventService;
