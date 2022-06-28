@@ -10,10 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @RequiredArgsConstructor
 public class UserPointService {
-    private final PointRepository repository;
+    private final PointRepository poninRepository;
 
     public Point get(String userId) {
-        return repository.findById(userId).orElseThrow(() -> new IllegalArgumentException(
+        return poninRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException(
                 String.format("Unknown userId : %s", userId)
         ));
     }
