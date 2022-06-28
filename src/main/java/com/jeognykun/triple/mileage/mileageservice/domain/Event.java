@@ -45,8 +45,8 @@ public class Event extends BaseTime{
     @Column(name = "photo", nullable = false)
     private String photo;
 
-    @Column(name = "user_id", nullable = false)
-    private String userId;
+//    @Column(name = "user_id", nullable = false)
+//    private String userId;
 
     @Column(name = "place_id", nullable = false)
     private String placeId;
@@ -56,7 +56,7 @@ public class Event extends BaseTime{
 
     @Builder
     public Event(String userId, String reviewId, String content, ActionType action, EventType type, long point, String photos, String placeId) {
-        this.userId = userId;
+//        this.userId = userId;
         this.reviewId = reviewId;
         this.content = content;
         this.action = action;

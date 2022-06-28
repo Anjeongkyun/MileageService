@@ -58,16 +58,16 @@ public class PlaceService {
                 .build());
     }
 
-    public PlaceHistory isPlace(String placeId, String reviewId, String userId) {
+    public PlaceHistory isPlace(String placeId, String reviewId, String placeUser) {
         PlaceId placeIds = PlaceId.builder()
                 .placeId(placeId)
-                .userId(userId)
+                .placeUser(placeUser)
                 .build();
 
         Optional<PlaceHistory> place = placeHistoryRepository.findById(placeIds);
 
         if(place.isPresent()) {
-            throw new PlaceWriteFailException(placeId,userId);
+            throw new PlaceWriteFailException(placeId,placeUser);
         }
 
         return PlaceHistory.builder()

@@ -16,11 +16,11 @@ public class PlaceId implements Serializable {
     private String placeId;
 
     @Column(name = "place_user")
-    private String userId;
+    private String placeUser;
 
     @Builder
-    public PlaceId(String placeId, String userId) {
+    public PlaceId(String placeId, String placeUser) {
         this.placeId = placeId;
-        this.userId = userId;
+        this.placeUser = placeUser;
     }
 }
