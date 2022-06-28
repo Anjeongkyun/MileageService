@@ -49,6 +49,13 @@ public class PlaceService {
         }
     }
 
+    public void setSpecialValue(String placeId, String reviewId) {
+        placeRepository.save(Place.builder()
+                .placeId(placeId)
+                .value(reviewId)
+                .build());
+    }
+
     public boolean isAvailableFirst(EventRequest dto, Place place) {
         if(place != null) {
             if(dto.getAction().equals(ActionType.DELETE)) {
@@ -61,27 +68,20 @@ public class PlaceService {
         }
     }
 
-    public void setSpecialValue(String placeId, String reviewId) {
-        placeRepository.save(Place.builder()
-                .placeId(placeId)
-                .value(reviewId)
-                .build());
-    }
-
     public PlaceHistory isPlace(String placeId, String reviewId, String placeUser) {
         PlaceId placeIds = PlaceId.builder()
                 .placeId(placeId)
                 .placeUser(placeUser)
                 .build();
 
-        Optional<PlaceHistory> place = placeHistoryRepository.findById(placeIds);
+        Optional<PlaceHistory> placeHistory = placeHistoryRepository.findById(placeIds);
 
-        if(!place.isPresent()) {
+        if(placeHistory.isPresent()) {
             throw new PlaceWriteFailException(placeId,placeUser);
         }
 
         return PlaceHistory.builder()
-                .placeId(placeIds)
+                .id(placeIds)
                 .reviewId(reviewId)
                 .build();
     }
