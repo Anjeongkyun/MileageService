@@ -43,7 +43,6 @@ public class PlaceService {
         if(reviewId.equals(place.getValue())) {
             placeRepository.save(Place.builder()
                     .placeId(place.getPlaceId())
-                    .type("special")
                     .value(null)
                     .build());
         }

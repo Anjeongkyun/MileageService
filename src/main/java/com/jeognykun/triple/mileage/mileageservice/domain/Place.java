@@ -23,16 +23,12 @@ public class Place extends BaseTime{
     @Column(name = "id")
     private String placeId;
 
-    @Column(name = "type")
-    private String type;
-
     @Column(name = "value")
     private String value;
 
     @Builder
-    public Place(String placeId, String type, String value) {
+    public Place(String placeId, String value) {
         this.placeId = placeId;
-        this.type = type;
         this.value = value;
     }
 }

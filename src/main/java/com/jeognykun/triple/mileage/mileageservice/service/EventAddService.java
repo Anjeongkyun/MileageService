@@ -20,6 +20,7 @@ public class EventAddService implements IEventActionService {
     private final PlaceService placeService;
     private final CalculatePointService calculatePointService;
     private final ReviewSaveService reviewSaveService;
+    private final PlaceSaveService placeSaveService;
 
     @Override
     public Event eventAction(EventRequest req) {
@@ -36,6 +37,7 @@ public class EventAddService implements IEventActionService {
         PlaceHistory placeHistory = placeService.isPlace(req.getPlaceId(), req.getReviewId(), req.getUserId());
         Event event = eventService.writeEvent(req, mileage);
         reviewSaveService.save(req);
+        placeSaveService.save(req);
         placeService.savePlaceHistory(placeHistory);
 
         return event;
