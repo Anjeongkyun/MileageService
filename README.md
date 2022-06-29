@@ -28,7 +28,7 @@
 * Java 8
 * Spring Boot (v2.7.1)
 * Spring Data JPA
-* lombok
+* Lombok
 * MySQL(v5.7)
 
 <br><hr><br>
@@ -114,12 +114,12 @@
 <br>
 
 ### **디자인 패턴**
-* Event Request 후 ADD/ MOD/ DELETE의 인스턴스 생성 부분을 **팩토리 메서드 패턴을 적용**하여 **인스턴스 생성 확장성과 낮은 결합도를 고려**하여 설계
+* Event Request 후 ADD/ MOD/ DELETE의 인스턴스 생성 부분(EventActionHandler)을 **팩토리 메서드 패턴을 적용**하여 **인스턴스 생성 확장성과 낮은 결합도를 고려**하여 설계
 
 <br>
 
 ### **SOLID 원칙 설계**
-* Event API 수신 시 Event Interface의 구현체(EventActionHanlder)를 만들어 자주 변경될 수 있는 모듈들을 **변동성이 낮은 구현체(EventActionHandler)에 의존**하도록 설계
+* Event API 수신 시 Event Interface의 구현체(EventActionHanlder)를 만들어 자주 변경될 수 있는 모듈들을 **변동성이 낮은 구현체에 의존**하도록 설계
 
 <br><hr><br>
 
