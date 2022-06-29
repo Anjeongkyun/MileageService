@@ -7,7 +7,7 @@
   * [API 명세서](#API-명세서)
 * **[과제 진행 방식](#과제-진행-방식)**
   * [설계](#설계)
-    * [Database](#[Database])
+    * [Database](#Database)
     * [API Design](#API-Design)
     * [디자인 패턴](#디자인-패턴)
     * [SOLID 원칙 설계](#SOLID-원칙-설계)
@@ -109,17 +109,20 @@
 <br><hr><br>
 
 # 실행 결과
-### 포인트 적립 API
-#### ADD
+## 포인트 적립 API
+### ADD
 ![image](https://user-images.githubusercontent.com/97106584/176436668-59531e54-b8d6-4d28-bed8-03248154f8bb.png)
 
 <br>
 
-#### MOD
+### MOD
 ![image](https://user-images.githubusercontent.com/97106584/176437036-ba7d003d-ac09-49f8-b1de-a674415bc98f.png)
 
 <br>
 
-#### DELETE
+### DELETE
 ![image](https://user-images.githubusercontent.com/97106584/176437115-63286a9d-8fca-44dd-9f31-973ec0278a09.png)
 
+<br>
+## 포인트 적립 API
+![image](https://user-images.githubusercontent.com/97106584/176437579-e23cae09-243d-4971-8e0b-90d2c696b188.png)
