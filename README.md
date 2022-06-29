@@ -97,7 +97,7 @@
 * **tb_review**
   * **review 내용 글자 수 & 사진 갯수 값을 관리하는 테이블**
 * **tb_place**
-  * **place 정보를 관리하는 테이블** (현재 과제 내용과는 벗어난다 생각하여 구현은 안되어있지만 type핃드를 추가하여 특정(special), 일반(normal)장소 구분하는 필드가 있어도 좋을 것 같습니다.)
+  * **place 정보를 관리하는 테이블** (현재 과제 내용과는 벗어난다 생각하여 구현은 안 되어있지만 특정(special), 일반(normal)장소 구분하는 필드가 있어도 좋을 것 같습니다.)
 * **tb_point_history**
   * **event 발생 후 추가된 event에 매핑된 point의 이력을 관리하는 테이블**
 * **tb_place_history**
