@@ -2,6 +2,7 @@
 
 ## 목차
 * **[개발 환경](#개발-환경)**
+* **[실행 방법](#실행-방법)**
 * **[과제 설명](#과제-설명)**
   * [서비스 목적](#서비스-목적)
   * [API 명세서](#API-명세서)
@@ -29,6 +30,16 @@
 * MySQL(v5.7)
 
 <br><hr><br>
+
+# 실행 방법
+1. git clone
+2. mileage database 생성 (mysql 5.7)
+3. project run
+4. database table 생성 확인
+5. api test 진행
+
+<br><hr><br>
+
 
 # 과제 설명
 ## 서비스 목적
