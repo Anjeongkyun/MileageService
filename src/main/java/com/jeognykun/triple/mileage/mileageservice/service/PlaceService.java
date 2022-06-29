@@ -70,7 +70,7 @@ public class PlaceService {
     public PlaceHistory isPlace(String placeId, String reviewId, String placeUser) {
         PlaceId placeIds = PlaceId.builder()
                 .placeId(placeId)
-                .placeUser(placeUser)
+                .userId(placeUser)
                 .build();
 
         Optional<PlaceHistory> placeHistory = placeHistoryRepository.findById(placeIds);
@@ -88,7 +88,7 @@ public class PlaceService {
     public void deletePlaceHistory(String placeId, String userId) {
         PlaceId placeIds = PlaceId.builder()
                 .placeId(placeId)
-                .placeUser(userId)
+                .userId(userId)
                 .build();
 
         placeHistoryRepository.deleteById(placeIds);
