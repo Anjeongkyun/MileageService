@@ -33,27 +33,22 @@ CREATE TABLE `tb_point` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `tb_place` (
+                            `place_id` varchar(255) NOT NULL,
+                            `created_at` datetime(6) DEFAULT NULL,
+                            `updated_at` datetime(6) DEFAULT NULL,
                             `review_id` varchar(255) DEFAULT NULL,
-                            `id` varchar(255) NOT NULL,
-                            `created_at` datetime DEFAULT NULL,
-                            `updated_at` datetime DEFAULT NULL,
-                            PRIMARY KEY (`id`),
-                            KEY `tb_place_FK` (`review_id`),
-                            CONSTRAINT `tb_place_FK` FOREIGN KEY (`review_id`) REFERENCES `tb_review` (`review_id`)
+                            PRIMARY KEY (`place_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `tb_place_history` (
+                                    `place_id` varchar(255) NOT NULL,
                                     `user_id` varchar(255) NOT NULL,
-                                    `history_id` bigint(20) NOT NULL AUTO_INCREMENT,
+                                    `created_at` datetime(6) DEFAULT NULL,
+                                    `updated_at` datetime(6) DEFAULT NULL,
                                     `review_id` varchar(255) DEFAULT NULL,
-                                    `place_id` varchar(255) DEFAULT NULL,
-                                    `created_at` datetime DEFAULT NULL,
-                                    `updated_at` datetime DEFAULT NULL,
-                                    PRIMARY KEY (`history_id`),
-                                    KEY `tb_place_history_FK` (`place_id`),
-                                    KEY `tb_place_history_FK_1` (`review_id`),
-                                    CONSTRAINT `tb_place_history_FK` FOREIGN KEY (`place_id`) REFERENCES `tb_place` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+                                    PRIMARY KEY (`place_id`,`user_id`),
+                                    CONSTRAINT `tb_place_history_FK` FOREIGN KEY (`place_id`) REFERENCES `tb_place` (`place_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `tb_point_history` (
                                     `history_id` bigint(20) NOT NULL AUTO_INCREMENT,
