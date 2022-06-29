@@ -35,7 +35,8 @@
 
 # 실행 방법
 1. git clone
-2. mileage database 생성 (mysql 5.7)
+![image](https://user-images.githubusercontent.com/97106584/176458572-1aa5a62c-b037-4391-acb2-18ce3dcdc7d2.png)
+2. 위의 properties에 적힌 내용과 같이 "mileage" database 생성 및 id/pw 설정 (mysql 5.7) 
 3. project run
 4. database table 생성 확인
 5. api test 진행
