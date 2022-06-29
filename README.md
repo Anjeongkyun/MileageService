@@ -119,7 +119,7 @@
 <br>
 
 ### **SOLID 원칙 설계**
-* Event API 수신 시 Event Interface의 구현체(EventActionHanlder)를 만들어 자주 변경될 수 있는 모듈들을 **변동성이 낮은 구현체에 의존**하도록 설계
+* Event API 수신 시 Event Interface의 구현체(EventActionService)를 만들어 **자주 변경될 수 있는 모듈을 변동성이 낮은 구현체에 의존하도록 설계
 
 <br><hr><br>
 
