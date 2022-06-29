@@ -40,10 +40,10 @@ public class PlaceService {
     }
 
     public void setSpecialPlace(Place place, String reviewId) {
-        if(reviewId.equals(place.getValue())) {
+        if(reviewId.equals(place.getReviewId())) {
             placeRepository.save(Place.builder()
                     .placeId(place.getPlaceId())
-                    .value(null)
+                    .reviewId(null)
                     .build());
         }
     }
@@ -51,16 +51,16 @@ public class PlaceService {
     public void setSpecialValue(String placeId, String reviewId) {
         placeRepository.save(Place.builder()
                 .placeId(placeId)
-                .value(reviewId)
+                .reviewId(reviewId)
                 .build());
     }
 
     public boolean isAvailableFirst(EventRequest dto, Place place) {
         if(place != null) {
             if(dto.getAction().equals(ActionType.DELETE)) {
-                return dto.getReviewId().equals(place.getValue());
+                return dto.getReviewId().equals(place.getReviewId());
             } else {
-                return place.getValue() == null;
+                return place.getReviewId() == null;
             }
         } else {
             return false;

@@ -17,7 +17,7 @@ public class PlaceSaveService {
     public Place save(EventRequest req) {
         return placeRepository.save(Place.builder()
                 .placeId(req.getPlaceId())
-                .value(req.getReviewId())
+                .reviewId(req.getReviewId())
                 .build());
     }
 
