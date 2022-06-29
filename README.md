@@ -73,6 +73,8 @@
 ## 설계
 
 ### **Database**
+#### [Schema.sql DDL바로가기](https://github.com/anjeongkyun/MileageService/blob/master/schema.sql)
+
 * **tb_event**
   * **event의 값을 관리하는 테이블**
 * **tb_point**
