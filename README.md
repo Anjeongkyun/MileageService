@@ -1,16 +1,25 @@
 # Triple-Club-Mileage-Service
 
 ## 목차
+* **[개발 환경](#개발-환경)**
 * **[과제 설명](#과제-설명)**
   * [서비스 목적](#서비스-목적)
   * [API 명세서](#API-명세서)
-* **[개발 환경](#개발-환경)**
 * **[과제 진행 방식](#과제-진행-방식)**
-  * [설계 시나리오](#설계-시나리오)
-  * [개발](#개발)
-    * **[Database](#[Database])**
-    * **[API Spec](#[API-Spec])**
-  * [진행 중 이슈사항](#진행-중-이슈)
+  * [설계](#설계)
+    * [Database](#[Database])
+    * [API Design](#API-Design)
+    * [디자인 패턴](#디자인-패턴)
+    * [SOLID 원칙](#SOLID-원칙-기반-설계)
+
+<br><hr><br>
+
+# 개발 환경
+* Java 8
+* Spring Boot (v2.7.1)
+* Spring Data JPA
+* lombok
+* MySQL(v5.7)
 
 <br><hr><br>
 
@@ -22,7 +31,7 @@
 
 ## API 명세서
 리뷰 작성이 이뤄질때마다 리뷰 작성 이벤트가 발생하고, **아래 API로 이벤트를 전달**한다.
-#### API Info
+### API Info
 ```Java
 {
   "type": "REVIEW",
@@ -53,14 +62,19 @@
 
 <br><hr><br>
 
-# 개발 환경
-* Java 8
-* Spring Boot (v2.7.1)
-* Spring Data JPA
-* lombok
-* MySQL
-
-<br><hr><br>
-
 # 과제 진행 방식
-## 설계 시나리오
+## 설계
+
+### **1. Database**
+
+### **2. API Design**
+|Method|URI|description|
+|------|---|---|
+|POST|/events|작성, 수정, 삭제(action: ADD,MOD,DELETE) API|
+|GET|/points/{id}|포인트 조회 API|
+
+### **3. 디자인 패턴**
+* Event Request (Action - ADD/ MOD/ DELETE)를 받을 때 **팩토리 메서드 패턴을 사용**하여 인스턴스 생성 확장성과 낮은 결합도를 고려하여 설계
+
+### **4. SOLID 원칙 클래스 설계**
+* Event API 수신 시 Event Interface의 구현체(EventActionHanlder)를 만들어 자주 변경될 수 있는 모듈들을 변동성이 낮은 구현체(EventActionHandler)에 의존하도록 설계
