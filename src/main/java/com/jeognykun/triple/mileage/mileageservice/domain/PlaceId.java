@@ -15,12 +15,12 @@ public class PlaceId implements Serializable {
     @Column(name = "place_id")
     private String placeId;
 
-    @Column(name = "place_user")
-    private String placeUser;
+    @Column(name = "user_id")
+    private String userId;
 
     @Builder
-    public PlaceId(String placeId, String placeUser) {
+    public PlaceId(String placeId, String userId) {
         this.placeId = placeId;
-        this.placeUser = placeUser;
+        this.userId = userId;
     }
 }

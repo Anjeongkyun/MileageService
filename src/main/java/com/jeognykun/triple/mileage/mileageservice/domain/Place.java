@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Table(name = "place")
+@Table(name = "tb_place")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Place extends BaseTime{
 
@@ -23,7 +23,7 @@ public class Place extends BaseTime{
     @Column(name = "id")
     private String placeId;
 
-    @Column(name = "reviewId")
+    @Column(name = "review_id")
     private String reviewId;
 
     @Builder

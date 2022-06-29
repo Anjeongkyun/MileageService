@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name ="event")
+@Table(name ="tb_event")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class Event extends BaseTime{

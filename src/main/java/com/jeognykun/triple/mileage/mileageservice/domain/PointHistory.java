@@ -11,7 +11,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "point_history")
+@Table(name = "tb_point_history")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class PointHistory extends BaseTime{

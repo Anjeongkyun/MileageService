@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "review")
+@Table(name = "tb_review")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class Review extends BaseTime{

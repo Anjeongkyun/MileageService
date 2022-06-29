@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@Table(name = "place_history")
+@Table(name = "tb_place_history")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PlaceHistory extends BaseTime{
 

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "point")
+@Table(name = "tb_point")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class Point extends BaseTime{
