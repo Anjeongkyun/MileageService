@@ -52,3 +52,8 @@
 <br><hr><br>
 
 # 개발 환경
+* Java 8
+* Spring Boot (v2.7.1)
+* Spring Data JPA
+* lombok
+* MySQL
