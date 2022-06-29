@@ -124,6 +124,7 @@
 ![image](https://user-images.githubusercontent.com/97106584/176437115-63286a9d-8fca-44dd-9f31-973ec0278a09.png)
 
 <br>
-## 포인트 적립 API
+
+## 포인트 조회 API
 
 ![image](https://user-images.githubusercontent.com/97106584/176437579-e23cae09-243d-4971-8e0b-90d2c696b188.png)
