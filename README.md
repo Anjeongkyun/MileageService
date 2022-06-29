@@ -12,6 +12,11 @@
     * [디자인 패턴](#디자인-패턴)
     * [SOLID 원칙 설계](#SOLID-원칙-설계)
 * **[실행 결과](#실행-결과)**
+  * [포인트 적립 API](#포인트-적립-API)
+    * [ADD](#ADD)
+    * [MOD](#MOD)
+    * [DELETE](#DELETE)
+  * [포인트 조회 API](#포인트-조회-API)
 
 
 <br><hr><br>
@@ -88,7 +93,7 @@
 ### **API Design**
 |Method|URI|description|
 |------|---|---|
-|POST|/events|작성, 수정, 삭제(action: ADD,MOD,DELETE) API|
+|POST|/events|작성, 수정, 삭제(ADD,MOD,DELETE) API|
 |GET|/points/{id}|포인트 조회 API|
 
 <br>
@@ -104,7 +109,17 @@
 <br><hr><br>
 
 # 실행 결과
-### [POST] /events 
-#### <span style="color:blue">ADD</span>
+### 포인트 적립 API
+#### ADD
+![image](https://user-images.githubusercontent.com/97106584/176436668-59531e54-b8d6-4d28-bed8-03248154f8bb.png)
 
+<br>
+
+#### MOD
+![image](https://user-images.githubusercontent.com/97106584/176437036-ba7d003d-ac09-49f8-b1de-a674415bc98f.png)
+
+<br>
+
+#### DELETE
+![image](https://user-images.githubusercontent.com/97106584/176437115-63286a9d-8fca-44dd-9f31-973ec0278a09.png)
 
