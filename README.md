@@ -89,19 +89,19 @@
 #### [Schema.sql DDL바로가기](https://github.com/anjeongkyun/MileageService/blob/master/schema.sql)
 
 * **tb_event**
-  * **event의 값을 관리하는 테이블**
+  * event의 값을 관리하는 테이블
 * **tb_point**
-  * **사용자의 point를 관리하는 테이블**
+  * 사용자의 point를 관리하는 테이블
   * point_id : 사용자 id 키 매핑 값
   * point : 사용자 point 값
 * **tb_review**
-  * **review 내용 글자 수 & 사진 갯수 값을 관리하는 테이블**
+  * review 내용 글자 수 & 사진 갯수 값을 관리하는 테이블
 * **tb_place**
-  * **place 정보를 관리하는 테이블** (현재 과제 내용과는 벗어난다 생각하여 구현은 안 되어있지만 특정(special), 일반(normal)장소 구분하는 필드가 있어도 좋을 것 같습니다.)
+  * place 정보를 관리하는 테이블 (현재 과제 내용과는 벗어난다 생각하여 구현은 안 되어있지만 특정(special), 일반(normal)장소 구분하는 필드가 있어도 좋을 것 같습니다.)
 * **tb_point_history**
-  * **event 발생 후 추가된 event에 매핑된 point의 이력을 관리하는 테이블**
+  * event 발생 후 추가된 event에 매핑된 point의 이력을 관리하는 테이블
 * **tb_place_history**
-  * **review를 작성할 때 이미 작성했던 장소인지 확인을 위한 이력 테이블**
+  * review를 작성할 때 이미 작성했던 장소인지 확인을 위한 이력 테이블
 
 <br>
 
